@@ -1,0 +1,91 @@
+@charset 'utf-8';
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+// Variaveis
+
+$bluebg: #181335;
+$white: rgb(250, 244, 244);
+
+$base-color: $bluebg;
+
+// Mixins
+
+@mixin transition {
+  transition: all 0.5s ease-in-out;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+}
+
+@mixin corners($radius) {
+  border-radius: $radius;
+
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -khtml-border-radius: $radius;
+}
+
+body {
+  background-color: $base-color;
+  height: 100%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#box {
+  width: 800px;
+  margin: 30px auto;
+  color: $white;
+  text-align: center;
+}
+
+#seconds,
+#miles,
+#semicolon {
+  font-family: "Wallpoet", cursive;
+  font-size: 5em;
+}
+#commands {
+  margin: 20px 0;
+}
+#semicolon {
+  display: inline-block;
+  vertical-align: 5px;
+}
+
+button {
+  @include corners(5px);
+  background: $base-color;
+  color: $white;
+  border: solid 1px $white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 10px 10px;
+  width: 180px;
+  margin: 10px;
+  outline: none;
+
+  &:hover {
+    @include transition;
+    background: $white;
+    border: 1px solid $white;
+    color: $base-color;
+  }
+}
+
+#log {
+  height: 100px;
+  width: 9ch;
+  margin: auto;
+  resize: none;
+  color: white;
+  background-color: transparent;
+  overflow-y: auto;
+  border: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif; 
+}
